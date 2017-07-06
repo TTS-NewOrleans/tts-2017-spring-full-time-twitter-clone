@@ -33,6 +33,24 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# **************
+# ** Our Gems **
+# **************
+
+# ~~ Styles ~~
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+# ~~ Annotate Models ~~
+gem 'annotate'
+
+# ~~ User Accounts ~~
+gem 'devise'
+
+# ~~ Picture Uploads ~~
+gem 'paperclip'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
