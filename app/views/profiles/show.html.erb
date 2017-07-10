@@ -1,0 +1,7 @@
+<!-- Username -->
+<h1><%=  @user.username %>'s Profile</h1>
+
+<!-- Show all their tweets -->
+<% @user.tweets.each do |tweet| %>
+  <%= tweet.message %> <br>
+<% end %>
