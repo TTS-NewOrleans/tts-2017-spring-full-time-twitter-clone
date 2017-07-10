@@ -1,2 +1,24 @@
-<h1>Tweets#show</h1>
-<p>Find me in app/views/tweets/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<!-- Tweet -->
+
+<!-- @username -->
+<p>
+  <strong>User: </strong><%= @tweet.user.username %>
+</p>
+
+<!-- message -->
+<p>
+  <strong>Message: </strong><%= @tweet.message %>
+</p>
+
+<!-- when it was tweeted -->
+<p>
+  <strong>Tweeted at </strong><%= @tweet.created_at %>
+</p>
+
+<!-- Button to Edit the tweet -->
+<%= link_to 'Edit', edit_tweet_path(@tweet), class: 'btn btn-sm btn-default' %>
+
+<!-- Button to the index -->
+<%= link_to 'Back to Feed', tweets_path, class: 'btn btn-sm btn-default' %>
