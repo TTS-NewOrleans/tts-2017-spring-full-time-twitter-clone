@@ -1,0 +1,37 @@
+<!-- Form -->
+<%= form_for(@tweet) do |f| %>
+  <!-- Show any errors -->
+  <% if @tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@tweet.errors.count, 'error') %> prohibited this tweet from being saved:
+      </h2>
+
+      <!-- iterate through the errors -->
+      <ul>
+        <% @tweet.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- The actual form fields -->
+
+  <!-- message field -->
+  <div class="field form-group">
+    <%= f.label :message %> <br>
+    <%= f.text_field :message, class: 'form-control' %>
+  </div>
+
+  <!-- user id field -->
+  <div class="field form-group">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <!-- submit button -->
+  <div class="actions form-group">
+    <%= f.submit class: 'btn btn-sm btn-danger' %>
+  </div>
+
+<% end %>
