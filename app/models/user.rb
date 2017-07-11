@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tweets
+  has_many :likes
 
   # ~ Person who follows (current user) ~
   has_many :relationships
