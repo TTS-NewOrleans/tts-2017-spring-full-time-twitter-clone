@@ -17,6 +17,18 @@ class RelationshipsController < ApplicationController
     end
   end
 
+  def destroy
+    # find the relationship that we want to destroy
+    @relationship = current_user.relationships.find(params[:id])
+    # Hulk SMASH!!!
+    @relationship.destroy
+
+    # Flash a notice that HULK SMASHED
+    flash[:notice] = "No longer following"
+    # Redirect to the root
+    redirect_to root_path
+  end
+
   private
 
   def relationship_params
