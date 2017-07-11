@@ -17,10 +17,15 @@ class LikesController < ApplicationController
 
   def destroy
     # set_tweet
-    # find the like we want gone
+    # find the like we want to DESTROY!
     # SMASH!!!
+    @tweet.likes.where(user_id: current_user.id).destroy_all
+
     # flash a notice
     # redirect
+    respond_to do |format|
+      format.html { redirect_to request.referrer, notice: "Unliked." }
+    end
   end
 
   private
