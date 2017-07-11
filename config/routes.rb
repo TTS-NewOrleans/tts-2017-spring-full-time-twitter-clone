@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   get 'profiles' => 'profiles#index'
   get 'profiles/:id' => 'profiles#show', as: :profile
 
-  resources :tweets
-  resources :relationships
+  resources :tweets do
+    resource :likes, only: [:create, :destroy]
+  end
+
+  resources :relationships, only: [:create, :destroy]
+
 
   devise_for :users
 

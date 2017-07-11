@@ -17,6 +17,9 @@
   <strong>Tweeted at </strong><%= @tweet.created_at %>
 </p>
 
+<%= render 'shared/likes' %>
+<br><br>
+
 <!-- Button to Edit the tweet -->
 <%= link_to 'Edit', edit_tweet_path(@tweet), class: 'btn btn-sm btn-default' %>
 
