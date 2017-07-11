@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
 
-  resources :relationships
+  resources :relationships, only: [:create, :destroy]
 
 
   devise_for :users
